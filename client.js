@@ -8,6 +8,7 @@ const connect = function () {
   conn.on("connect", () => {
     // print msg when connection is first established
     console.log("YAY! Connected to server 😄");
+    // msg sent to server to write so that our "name" appears above snake
     conn.write('Name: GC!');
   })
   conn.on("data", (data) => {
