@@ -7,13 +7,15 @@ const connect = function () {
     port: 50541 // PORT number here,
   });
   conn.on("connect", () => {
-    // code that does something when connection is first established
+    // print msg when connection is first established
     console.log("YAY! Connected to server 😄");
   })
   conn.on("data", (data) => {
+    // message that server sends back to us
     console.log("Server says:", data);
   })
   conn.on("end", () => {
+    // print msg when connection is terminated 
     console.log("BOO, disconnected from server 😣")
   })
   // interpret incoming data as text
