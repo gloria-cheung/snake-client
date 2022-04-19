@@ -8,6 +8,7 @@ const connect = function () {
   conn.on("connect", () => {
     // print msg when connection is first established
     console.log("YAY! Connected to server 😄");
+    conn.write('Name: GC!');
   })
   conn.on("data", (data) => {
     // message that server sends back to us
