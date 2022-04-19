@@ -8,7 +8,7 @@ const messages = {
   h: "hi stranger!",
   l: "lolololol",
   o: "oh no..."
-}
+};
 
 module.exports = {
   IP,
@@ -18,4 +18,4 @@ module.exports = {
   MOVE_RIGHT_KEY,
   MOVE_UP_KEY,
   messages
-}
+};

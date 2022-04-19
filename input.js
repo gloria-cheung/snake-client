@@ -1,7 +1,7 @@
 // Stores the active TCP connection object.
 let connection;
 
-// requiring constants from constants module 
+// requiring constants from constants module
 const {MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY, MOVE_UP_KEY, messages} = require("./constants");
 
 
