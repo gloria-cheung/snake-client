@@ -5,11 +5,14 @@ const connect = function () {
     host: "localhost" , // IP address here,
     port: 50541 // PORT number here,
   });
-  conn.on("connect", () => {
+  conn.on("connect", (data) => {
     // print msg when connection is first established
     console.log("YAY! Connected to server 😄");
     // msg sent to server to write so that our "name" appears above snake
-    conn.write('Name: GC!');
+    conn.write("Name: GC!");
+    // if we wanted our snake to start off with 1 square up: 
+    // conn.write("Move: up");
+
   })
   conn.on("data", (data) => {
     // message that server sends back to us
