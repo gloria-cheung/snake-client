@@ -1,6 +1,10 @@
 // Stores the active TCP connection object.
 let connection;
 
+// requiring constants from constants module 
+const {MOVE_DOWN_KEY, MOVE_LEFT_KEY, MOVE_RIGHT_KEY, MOVE_UP_KEY, messages} = require("./constants");
+
+
 // setup interface to handle user input from stdin
 const setupInput = function(conn) {
   connection = conn;
@@ -24,26 +28,21 @@ const handleUserInput = function(key) {
   }
   if (key === "w") {
     // since connection object is named connection (instead of conn), use connection.write to write to server
-    connection.write("Move: up");
+    connection.write(MOVE_UP_KEY);
   }
   if (key === "s") {
-    connection.write("Move: down");
+    connection.write(MOVE_DOWN_KEY);
   }
   if (key === "a") {
-    connection.write("Move: left");
+    connection.write(MOVE_LEFT_KEY);
   }
   if (key === "d") {
-    connection.write("Move: right");
+    connection.write(MOVE_RIGHT_KEY);
   }
-  if (key === "h") {
-    connection.write("Say: hi stranger!");
+  if (messages[key]) {
+    connection.write(`Say: ${messages[key]}`);
   }
-  if (key === "o") {
-    connection.write("Say: oh no..");
-  }
-  if (key === "l") {
-    connection.write("Say: lolololol");
-  }
+  
 };
 
 module.exports = { setupInput };
